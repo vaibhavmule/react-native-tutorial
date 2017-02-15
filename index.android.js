@@ -12,11 +12,21 @@ import {
 } from 'react-native';
 
 
-class Greeting extends Component {
+class Blink extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {showText: true};
+
+    setInterval (() => {
+      this.setState({ showText: !this.state.showText})
+    }, 1000)
+  }
+
   render() {
+    let display = this.state.showText ? this.props.text : '';
     return (
-    <Text>Hello, {this.props.name}</Text>
-  )
+      <Text>{display  }</Text>
+    )
   }
 }
 
@@ -24,9 +34,9 @@ export default class AwesomeProject extends Component {
   render() {
     return (
     <View style={{alignItems: 'center'}}>
-      <Greeting name='Vaibhav' />
-      <Greeting name='Foo' />
-      <Greeting name='Bar' />
+      <Blink text='Vaibhav' />
+      <Blink text='Foo' />
+      <Blink text='Bar' />
     </View>
     )
   }
