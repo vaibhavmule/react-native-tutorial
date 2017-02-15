@@ -7,8 +7,6 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
   View
 } from 'react-native';
 
@@ -16,26 +14,13 @@ import {
 export default class AwesomeProject extends Component {
   render() {
     return (
-    <View>
-      <Text style={styles.red}>Vaibhav</Text>
-      <Text style={styles.bigblue}>Foo</Text>
-      <Text style={[styles.bigblue, styles.red]}>Foo, Bar</Text>
-      <Text style={[styles.red, styles.bigblue]}>Faux</Text>
-    </View>
+      <View>
+        <View style={{width: 50, height:50, backgroundColor: 'powderblue'}} />
+        <View style={{width: 100, height: 100, backgroundColor: 'skyblue'}} />
+        <View style={{width:150, height:150, backgroundColor: 'steelblue'}}/>
+      </View>
     )
   }
 }
-
-
-const styles = StyleSheet.create({
- bigblue: {
-  color: 'blue',
-  fontWeight: 'bold',
-  fontSize: 30,
- },
- red: {
-  color:'red',
- }
-})
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
